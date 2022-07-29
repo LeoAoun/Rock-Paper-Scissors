@@ -82,29 +82,38 @@ function play(){
 
     // VERIFY THE WINNER
     if(movePlayer == "rock" && moveBot == "rock"){
-        document.getElementById("result").textContent = "Draw (Empate)!" }
+        document.getElementById("result").textContent = "Draw (Empate)!"
+        drawAudio() }
     if(movePlayer == "paper" && moveBot == "paper"){
-        document.getElementById("result").textContent = "Draw (Empate)!" }
+        document.getElementById("result").textContent = "Draw (Empate)!"
+        drawAudio()  }
     if(movePlayer == "scissors" && moveBot == "scissors"){
-        document.getElementById("result").textContent = "Draw (Empate)!" }
+        document.getElementById("result").textContent = "Draw (Empate)!"
+        drawAudio()  }
 
     if(movePlayer == "rock" && moveBot == "scissors"){
-        document.getElementById("result").textContent = "You Win (Você Venceu)!" }
+        document.getElementById("result").textContent = "You Win (Você Venceu)!"
+        winAudio() }
     if(movePlayer == "paper" && moveBot == "rock"){
-        document.getElementById("result").textContent = "You Win (Você Venceu)!" }
+        document.getElementById("result").textContent = "You Win (Você Venceu)!"
+        winAudio() }
     if(movePlayer == "scissors" && moveBot == "paper"){
-        document.getElementById("result").textContent = "You Win (Você Venceu)!" }
+        document.getElementById("result").textContent = "You Win (Você Venceu)!"
+        winAudio() }
 
     if(movePlayer == "rock" && moveBot == "paper"){
-        document.getElementById("result").textContent = "Defeat (Derrota)!" }
+        document.getElementById("result").textContent = "Defeat (Derrota)!" 
+        loseAudio() }
     if(movePlayer == "paper" && moveBot == "scissors"){
-        document.getElementById("result").textContent = "Defeat (Derrota)!" }
+        document.getElementById("result").textContent = "Defeat (Derrota)!" 
+        loseAudio()}
     if(movePlayer == "scissors" && moveBot == "rock"){
-        document.getElementById("result").textContent = "Defeat (Derrota)!" }
+        document.getElementById("result").textContent = "Defeat (Derrota)!" 
+        loseAudio()}
 
         setTimeout(function screenGameOver(){
             document.getElementById("gameover").style.display="flex"
-        }, 800)
+        }, 100)
     }
     
 }
@@ -113,6 +122,24 @@ function play(){
 function buttonSound(){
     audio = document.getElementById("buttonSound")
     audio.volume = 0.7
+    audio.play()
+}
+
+function winAudio(){
+    audio = document.getElementById("winAudio")
+    audio.volume = 0.5
+    audio.play()
+}
+
+function drawAudio(){
+    audio = document.getElementById("drawAudio")
+    audio.volume = 0.5
+    audio.play()
+}
+
+function loseAudio(){
+    audio = document.getElementById("loseAudio")
+    audio.volume = 0.5
     audio.play()
 }
 
