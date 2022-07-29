@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper and Scissors</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Images/favicon.gif" type="image/gif" >
+</head>
+<body>
+
+    <div id="all">
+            <div id="player1">
+
+                <span class="playersText">You</span>
+                <img id="img1" src="Images/Lucky.png" alt="">
+                <span id="choiceYou">Choose:</span>
+                <select name="" id="selector">
+                    <option value="Rock">Rock (Pedra)</option>
+                    <option value="Paper">Paper (Papel)</option>
+                    <option value="Scissors">Scissors (Tesoura)</option>
+                </select>
+                <button id="button1" onclick="choice()">Choice (Escolha)</button>
+                <button id="button2">Play (Jogar)</button>
+            
+            </div>
+
+            <div id="x">
+            <img id="vs" src="Images/VS.png" alt="">
+            </div>
+            
+            <div id="bot">
+                <span class="playersText">Bot</span>
+                <img id="img2" src="Images/Lucky.png" alt="">
+                <span id="choiceBot">(??????)</span>
+              
+                
+                <a href="https://github.com/LeoAoun" id="credits" target="_blank">Made By: Leo_Aoun</a>
+            </div>
+            
+    </div>
+
+    <div id="gameover">
+       <span id="result" class="itens"></span>
+       <button id="button3" onclick="restart()" class="itens" id="again">Play Again (Jogar Novamente)</button>
+    </div>
+    </div>
+
+    <audio id="buttonSound" src="CLICK13A.mp3"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
