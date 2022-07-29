@@ -1,16 +1,20 @@
-var moveBot
 var textBot = document.getElementById("choiceBot")
-var audio
 var button1 = document.getElementById("button1")
 var button2 = document.getElementById("button2")
 var button3 = document.getElementById("button3")
+
+// VERIFY IF THE PLAYER CHOSE ANY OPTION
 var choiced = false
 
+// PLAYER MOVES
 player = ["rock", "paper", "scissors"]
+
+// BOT MOVES
 bot = ["rock", "paper", "scissors"]
 
 button2.addEventListener('click', play)
 
+// GET THE INPUT VALUE THAT THE PLAYER CHOSE
 function choice(){
     
     choiced = true
@@ -35,7 +39,10 @@ function choice(){
     }
 }
 
+// PLAY THE GAME
 function play(){
+
+    // CHECK THE PLAYER CHOICE
     if (choiced){
 
     if(selector == "Rock"){
@@ -48,9 +55,11 @@ function play(){
         movePlayer = player[2]
     }  
 
+    // GENERATES A RANDOM NUMBER FROM 1 TO 3
     p2 = Math.floor(Math.random()*3)
     moveBot = bot[p2]
 
+    // INPUT AN IMAGE OF THE BOT PLAY ON THE SCREEN
     switch(moveBot){
         case "rock": 
             img2 = document.getElementById("img2")
@@ -71,6 +80,7 @@ function play(){
             break
     }
 
+    // VERIFY THE WINNER
     if(movePlayer == "rock" && moveBot == "rock"){
         document.getElementById("result").textContent = "Draw (Empate)!" }
     if(movePlayer == "paper" && moveBot == "paper"){
@@ -99,6 +109,14 @@ function play(){
     
 }
 
+// BUTTON SOUND
+function buttonSound(){
+    audio = document.getElementById("buttonSound")
+    audio.volume = 0.7
+    audio.play()
+}
+
+// RESTART THE GAME
 function restart(){
     window.location.reload()
 }
@@ -107,9 +125,4 @@ button1.addEventListener("click", buttonSound)
 button2.addEventListener("click", buttonSound)
 button3.addEventListener("click", buttonSound)
 
-
-function buttonSound(){
-    audio = document.getElementById("buttonSound")
-    audio.volume = 0.7
-    audio.play()
-}
+button3.addEventListener("click", restart)
