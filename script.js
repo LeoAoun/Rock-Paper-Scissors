@@ -1,33 +1,37 @@
-var move2
+var moveBot
 var textBot = document.getElementById("choiceBot")
-var block = document.getElementById("img1").getAttribute("src")
 var audio
 var button1 = document.getElementById("button1")
 var button2 = document.getElementById("button2")
 var button3 = document.getElementById("button3")
 var choiced = false
 
-player1 = ["rock", "paper", "scissors"]
+player = ["rock", "paper", "scissors"]
 bot = ["rock", "paper", "scissors"]
 
 button2.addEventListener('click', play)
 
 function choice(){
+    
     choiced = true
     selector = document.getElementById("selector").value
     document.getElementById("choiceYou").innerHTML = selector
 
-    if (selector == "Rock"){
-        img1 = document.getElementById("img1")
-        img1.setAttribute('src', 'Images/Rock.png')
-    }
-    if (selector == "Paper"){
-        img1 = document.getElementById("img1")
-        img1.setAttribute('src', 'Images/Paper.png')
-    }
-    if (selector == "Scissors"){
-        img1 = document.getElementById("img1")
-        img1.setAttribute('src', 'Images/Scissors.png')
+    switch(selector){
+        case "Rock": 
+            img1 = document.getElementById("img1")
+            img1.setAttribute('src', 'Images/Rock.png')
+            break
+
+        case "Paper":
+            img1 = document.getElementById("img1")
+            img1.setAttribute('src', 'Images/Paper.png')
+            break
+
+        case "Scissors":
+            img1 = document.getElementById("img1")
+            img1.setAttribute('src', 'Images/Scissors.png')
+            break
     }
 }
 
@@ -35,53 +39,57 @@ function play(){
     if (choiced){
 
     if(selector == "Rock"){
-        move1 = player1[0]
+        movePlayer = player[0]
     }
     if(selector == "Paper"){
-        move1 = player1[1]
+        movePlayer = player[1]
     } 
     if(selector == "Scissors"){
-        move1 = player1[2]
+        movePlayer = player[2]
     }  
 
     p2 = Math.floor(Math.random()*3)
-    move2 = bot[p2]
+    moveBot = bot[p2]
 
-    if(move2 == 'rock'){
-        img2 = document.getElementById("img2")
-        img2.setAttribute('src', 'Images/Rock.png')
-        textBot.textContent = "Rock"
+    switch(moveBot){
+        case "rock": 
+            img2 = document.getElementById("img2")
+            img2.setAttribute('src', 'Images/Rock.png')
+            textBot.textContent = "Rock"
+            break
+
+        case "paper":
+            img2 = document.getElementById("img2")
+            img2.setAttribute('src', 'Images/Paper.png')
+            textBot.textContent = "Paper"
+            break
+
+        case "scissors":
+            img2 = document.getElementById("img2")
+            img2.setAttribute('src', 'Images/Scissors.png')
+            textBot.textContent = "Scissors"
+            break
     }
-    if(move2 == 'paper'){
-        img2 = document.getElementById("img2")
-        img2.setAttribute('src', 'Images/Paper.png')
-        textBot.textContent = "Paper"
-    }
-    if(move2 == 'scissors'){
-        img2 = document.getElementById("img2")
-        img2.setAttribute('src', 'Images/Scissors.png')
-        textBot.textContent = "Scissors"
-    }
 
-    if(move1 == "rock" && move2 == "rock"){
+    if(movePlayer == "rock" && moveBot == "rock"){
         document.getElementById("result").textContent = "Draw (Empate)!" }
-    if(move1 == "paper" && move2 == "paper"){
+    if(movePlayer == "paper" && moveBot == "paper"){
         document.getElementById("result").textContent = "Draw (Empate)!" }
-    if(move1 == "scissors" && move2 == "scissors"){
+    if(movePlayer == "scissors" && moveBot == "scissors"){
         document.getElementById("result").textContent = "Draw (Empate)!" }
 
-    if(move1 == "rock" && move2 == "scissors"){
+    if(movePlayer == "rock" && moveBot == "scissors"){
         document.getElementById("result").textContent = "You Win (Você Venceu)!" }
-    if(move1 == "paper" && move2 == "rock"){
+    if(movePlayer == "paper" && moveBot == "rock"){
         document.getElementById("result").textContent = "You Win (Você Venceu)!" }
-    if(move1 == "scissors" && move2 == "paper"){
+    if(movePlayer == "scissors" && moveBot == "paper"){
         document.getElementById("result").textContent = "You Win (Você Venceu)!" }
 
-    if(move1 == "rock" && move2 == "paper"){
+    if(movePlayer == "rock" && moveBot == "paper"){
         document.getElementById("result").textContent = "Defeat (Derrota)!" }
-    if(move1 == "paper" && move2 == "scissors"){
+    if(movePlayer == "paper" && moveBot == "scissors"){
         document.getElementById("result").textContent = "Defeat (Derrota)!" }
-    if(move1 == "scissors" && move2 == "rock"){
+    if(movePlayer == "scissors" && moveBot == "rock"){
         document.getElementById("result").textContent = "Defeat (Derrota)!" }
 
         setTimeout(function screenGameOver(){
@@ -95,13 +103,13 @@ function restart(){
     window.location.reload()
 }
 
-button1.addEventListener("click", sound)
-button2.addEventListener("click", sound)
-button3.addEventListener("click", sound)
+button1.addEventListener("click", buttonSound)
+button2.addEventListener("click", buttonSound)
+button3.addEventListener("click", buttonSound)
 
 
-function sound(){
-    audio = document.querySelector('audio')
-    audio.volume = 0.07
+function buttonSound(){
+    audio = document.getElementById("buttonSound")
+    audio.volume = 0.7
     audio.play()
 }

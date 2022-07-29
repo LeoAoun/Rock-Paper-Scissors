@@ -127,12 +127,9 @@ select{
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    align-items: center; 
-   
-    
-    
-       
+    align-items: center;        
 }
+
 .itens{
     display: inline-block;
     bottom: 200px;
