@@ -1,25 +1,23 @@
-var textBot = document.getElementById("choiceBot")
-var button1 = document.getElementById("button1")
-var button2 = document.getElementById("button2")
-var button3 = document.getElementById("button3")
+let textBot = document.getElementById("botChoiceText")
+let button1 = document.getElementById("button1")
+let button2 = document.getElementById("button2")
+let button3 = document.getElementById("button3")
 
 // VERIFY IF THE PLAYER CHOSE ANY OPTION
-var choiced = false
+let choiced = false
 
 // PLAYER MOVES
-player = ["rock", "paper", "scissors"]
+let player = ["rock", "paper", "scissors"]
 
 // BOT MOVES
-bot = ["rock", "paper", "scissors"]
-
-button2.addEventListener('click', play)
+let bot = ["rock", "paper", "scissors"]
 
 // GET THE INPUT VALUE THAT THE PLAYER CHOSE
 function choice(){
     
     choiced = true
     selector = document.getElementById("selector").value
-    document.getElementById("choiceYou").innerHTML = selector
+    document.getElementById("yourChoiceText").innerHTML = selector
 
     switch(selector){
         case "Rock": 
@@ -81,15 +79,9 @@ function play(){
     }
 
     // VERIFY THE WINNER
-    if(movePlayer == "rock" && moveBot == "rock"){
+    if(movePlayer == moveBot){
         document.getElementById("result").textContent = "Draw (Empate)!"
         drawAudio() }
-    if(movePlayer == "paper" && moveBot == "paper"){
-        document.getElementById("result").textContent = "Draw (Empate)!"
-        drawAudio()  }
-    if(movePlayer == "scissors" && moveBot == "scissors"){
-        document.getElementById("result").textContent = "Draw (Empate)!"
-        drawAudio()  }
 
     if(movePlayer == "rock" && moveBot == "scissors"){
         document.getElementById("result").textContent = "You Win (Você Venceu)!"
@@ -125,18 +117,21 @@ function buttonSound(){
     audio.play()
 }
 
+// PLAY THE WIN AUDIO
 function winAudio(){
     audio = document.getElementById("winAudio")
     audio.volume = 0.5
     audio.play()
 }
 
+// PLAY THE DRAW AUDIO
 function drawAudio(){
     audio = document.getElementById("drawAudio")
     audio.volume = 0.5
     audio.play()
 }
 
+// PLAY THE LOSE AUDIO
 function loseAudio(){
     audio = document.getElementById("loseAudio")
     audio.volume = 0.5
@@ -151,5 +146,7 @@ function restart(){
 button1.addEventListener("click", buttonSound)
 button2.addEventListener("click", buttonSound)
 button3.addEventListener("click", buttonSound)
+
+button2.addEventListener('click', play)
 
 button3.addEventListener("click", restart)
