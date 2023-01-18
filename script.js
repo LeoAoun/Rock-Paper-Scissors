@@ -22,17 +22,17 @@ function choice(){
     switch(selector){
         case "Rock": 
             img1 = document.getElementById("img1")
-            img1.setAttribute('src', 'Images/Rock.png')
+            img1.setAttribute("src", "./Images/Rock-Player.png")
             break
 
         case "Paper":
             img1 = document.getElementById("img1")
-            img1.setAttribute('src', 'Images/Paper.png')
+            img1.setAttribute("src", "./Images/Paper-Player.png")
             break
 
         case "Scissors":
             img1 = document.getElementById("img1")
-            img1.setAttribute('src', 'Images/Scissors.png')
+            img1.setAttribute("src", "./Images/Scissors-Player.png")
             break
     }
 }
@@ -61,19 +61,19 @@ function play(){
     switch(moveBot){
         case "rock": 
             img2 = document.getElementById("img2")
-            img2.setAttribute('src', 'Images/Rock.png')
+            img2.setAttribute("src", "./Images/Rock-Bot.png")
             textBot.textContent = "Rock"
             break
 
         case "paper":
             img2 = document.getElementById("img2")
-            img2.setAttribute('src', 'Images/Paper.png')
+            img2.setAttribute("src", "./Images/Paper-Bot.png")
             textBot.textContent = "Paper"
             break
 
         case "scissors":
             img2 = document.getElementById("img2")
-            img2.setAttribute('src', 'Images/Scissors.png')
+            img2.setAttribute("src", "./Images/Scissors-Bot.png")
             textBot.textContent = "Scissors"
             break
     }
@@ -147,6 +147,6 @@ button1.addEventListener("click", buttonSound)
 button2.addEventListener("click", buttonSound)
 button3.addEventListener("click", buttonSound)
 
-button2.addEventListener('click', play)
+button2.addEventListener("click", play)
 
 button3.addEventListener("click", restart)

@@ -1,50 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper and Scissors</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="Images/favicon.gif" type="image/gif">
+    <link rel="icon" href="Images/favicon.gif" type="image/gif" >
 </head>
-
 <body>
 
-    <div class="container">
-        <div class="player">
-            <span class="playersText">You</span>
-            <img id="img1" src="Images/Lucky.png">
-            <span id="yourChoiceText">Choose:</span>
-            <select id="selector">
-                <option value="Rock">Rock (Pedra)</option>
-                <option value="Paper">Paper (Papel)</option>
-                <option value="Scissors">Scissors (Tesoura)</option>
-            </select>
-            <button id="button1" onclick="choice()">Select (Selecionar)</button>
-            <button id="button2">Play (Jogar)</button>
-        </div>
+    <div id="all">
+            <div id="player1">
+                <span class="playersText">You</span>
+                <img id="img1" src="Images/Lucky.png" alt="">
+                <span id="yourChoiceText">Choose:</span>
+                <select name="" id="selector">
+                    <option value="Rock">Rock (Pedra)</option>
+                    <option value="Paper">Paper (Papel)</option>
+                    <option value="Scissors">Scissors (Tesoura)</option>
+                </select>
+                <button id="button1" onclick="choice()">Select (Selecionar)</button>
+                <button id="button2">Play (Jogar)</button>
+            </div>
 
-        <div id="x">
-            <img id="vs" src="Images/VS.png" >
-        </div>
-
-        <div class="bot">
-            <span class="playersText">Bot</span>
-            <img id="img2" src="Images/Lucky.png" >
-            <span id="botChoiceText">(??????)</span>
-
-            <a href="https://github.com/LeoAoun" id="credits" target="_blank">Made By: Leo_Aoun</a>
-        </div>
-
+            <div id="x">
+            <img id="vs" src="Images/VS.png" alt="">
+            </div>
+            
+            <div id="bot">
+                <span class="playersText">Bot</span>
+                <img id="img2" src="Images/Lucky.png" alt="">
+                <span id="botChoiceText">(??????)</span>
+              
+                <a href="https://github.com/LeoAoun" id="credits" target="_blank">Made By: Leo_Aoun</a>
+            </div>
+            
     </div>
 
     <div id="gameover">
-        <span id="result"></span>
-        <button id="button3" id="again">Play Again (Jogar Novamente)</button>
+       <span id="result" class="itens"></span>
+       <button id="button3" class="itens" id="again">Play Again (Jogar Novamente)</button>
     </div>
-
 
     <audio id="buttonSound" src="Audios/click.mp3"></audio>
 
@@ -68,5 +65,4 @@
 
     <script src="script.js"></script>
 </body>
-
 </html>
