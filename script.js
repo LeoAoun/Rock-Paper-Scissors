@@ -1,7 +1,17 @@
-let textBot = document.getElementById("botChoiceText")
-let button1 = document.getElementById("button1")
-let button2 = document.getElementById("button2")
-let button3 = document.getElementById("button3")
+const textBot = document.getElementById("botChoiceText")
+
+const playerImg = document.getElementById("player-img")
+const botImg = document.getElementById("bot-img")
+
+const button1 = document.getElementById("button1")
+const button2 = document.getElementById("button2")
+const button3 = document.getElementById("button3")
+
+const FINISH_OPTIONS = {
+    WIN: "YOU WIN!",
+    DRAW: "DRAW!",
+    DEFEAT: "DEFEAT"
+}
 
 // VERIFY IF THE PLAYER CHOSE ANY OPTION
 let choiced = false
@@ -17,22 +27,19 @@ function choice(){
     
     choiced = true
     selector = document.getElementById("selector").value
-    document.getElementById("yourChoiceText").innerHTML = selector
+    document.getElementById("playerChoiceText").innerHTML = selector
 
     switch(selector){
         case "Rock": 
-            img1 = document.getElementById("img1")
-            img1.setAttribute("src", "./Images/Rock-Player.png")
+            playerImg.setAttribute("src", "./Images/Rock-Player.png")
             break
 
         case "Paper":
-            img1 = document.getElementById("img1")
-            img1.setAttribute("src", "./Images/Paper-Player.png")
+            playerImg.setAttribute("src", "./Images/Paper-Player.png")
             break
 
         case "Scissors":
-            img1 = document.getElementById("img1")
-            img1.setAttribute("src", "./Images/Scissors-Player.png")
+            playerImg.setAttribute("src", "./Images/Scissors-Player.png")
             break
     }
 }
@@ -60,47 +67,44 @@ function play(){
     // INPUT AN IMAGE OF THE BOT PLAY ON THE SCREEN
     switch(moveBot){
         case "rock": 
-            img2 = document.getElementById("img2")
-            img2.setAttribute("src", "./Images/Rock-Bot.png")
+            botImg.setAttribute("src", "./Images/Rock-Bot.png")
             textBot.textContent = "Rock"
             break
 
         case "paper":
-            img2 = document.getElementById("img2")
-            img2.setAttribute("src", "./Images/Paper-Bot.png")
+            botImg.setAttribute("src", "./Images/Paper-Bot.png")
             textBot.textContent = "Paper"
             break
 
         case "scissors":
-            img2 = document.getElementById("img2")
-            img2.setAttribute("src", "./Images/Scissors-Bot.png")
+            botImg.setAttribute("src", "./Images/Scissors-Bot.png")
             textBot.textContent = "Scissors"
             break
     }
 
     // VERIFY THE WINNER
     if(movePlayer == moveBot){
-        document.getElementById("result").textContent = "Draw (Empate)!"
+        document.getElementById("result").textContent = FINISH_OPTIONS.DRAW
         drawAudio() }
 
     if(movePlayer == "rock" && moveBot == "scissors"){
-        document.getElementById("result").textContent = "You Win (Você Venceu)!"
+        document.getElementById("result").textContent = FINISH_OPTIONS.WIN
         winAudio() }
     if(movePlayer == "paper" && moveBot == "rock"){
-        document.getElementById("result").textContent = "You Win (Você Venceu)!"
+        document.getElementById("result").textContent = FINISH_OPTIONS.WIN
         winAudio() }
     if(movePlayer == "scissors" && moveBot == "paper"){
-        document.getElementById("result").textContent = "You Win (Você Venceu)!"
+        document.getElementById("result").textContent = FINISH_OPTIONS.WIN
         winAudio() }
 
     if(movePlayer == "rock" && moveBot == "paper"){
-        document.getElementById("result").textContent = "Defeat (Derrota)!" 
+        document.getElementById("result").textContent = FINISH_OPTIONS.DEFEAT 
         loseAudio() }
     if(movePlayer == "paper" && moveBot == "scissors"){
-        document.getElementById("result").textContent = "Defeat (Derrota)!" 
+        document.getElementById("result").textContent = FINISH_OPTIONS.DEFEAT 
         loseAudio()}
     if(movePlayer == "scissors" && moveBot == "rock"){
-        document.getElementById("result").textContent = "Defeat (Derrota)!" 
+        document.getElementById("result").textContent = FINISH_OPTIONS.DEFEAT 
         loseAudio()}
 
         setTimeout(function screenGameOver(){

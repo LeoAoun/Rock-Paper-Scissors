@@ -10,37 +10,35 @@
 </head>
 <body>
 
-    <div id="all">
-            <div id="player1">
+    <div class="container">
+            <div class="player">
                 <span class="playersText">You</span>
-                <img id="img1" src="Images/Lucky.png" alt="">
-                <span id="yourChoiceText">Choose:</span>
+                <img id="player-img" src="Images/Lucky.png" >
+                <span id="playerChoiceText">Choose:</span>
                 <select name="" id="selector">
-                    <option value="Rock">Rock (Pedra)</option>
-                    <option value="Paper">Paper (Papel)</option>
-                    <option value="Scissors">Scissors (Tesoura)</option>
+                    <option value="Rock">Rock</option>
+                    <option value="Paper">Paper</option>
+                    <option value="Scissors">Scissors</option>
                 </select>
-                <button id="button1" onclick="choice()">Select (Selecionar)</button>
-                <button id="button2">Play (Jogar)</button>
+                <button id="button1" onclick="choice()">Select</button>
+                <button id="button2">Play</button>
             </div>
 
             <div id="x">
-            <img id="vs" src="Images/VS.png" alt="">
+            <img class="vs" src="Images/VS.png" >
             </div>
             
-            <div id="bot">
+            <div class="bot">
                 <span class="playersText">Bot</span>
-                <img id="img2" src="Images/Lucky.png" alt="">
-                <span id="botChoiceText">(??????)</span>
-              
-                <a href="https://github.com/LeoAoun" id="credits" target="_blank">Made By: Leo_Aoun</a>
+                <img id="bot-img" src="Images/Lucky.png" >
+                <span id="botChoiceText">(??????)</span>              
             </div>
             
     </div>
 
     <div id="gameover">
-       <span id="result" class="itens"></span>
-       <button id="button3" class="itens" id="again">Play Again (Jogar Novamente)</button>
+       <span id="result"></span>
+       <button id="button3" id="again">Play Again</button>
     </div>
 
     <audio id="buttonSound" src="Audios/click.mp3"></audio>
@@ -63,6 +61,6 @@
         <source src="Audios/lose.mp3" type="audio/mp3">
     </audio>
 
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
 </body>
 </html>
