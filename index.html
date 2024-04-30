@@ -1,66 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock, Paper and Scissors</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="Images/favicon.gif" type="image/gif" >
-</head>
-<body>
-
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="Images/favicon.gif" type="image/gif" />
+  </head>
+  <body>
     <div class="container">
-            <div class="player">
-                <span class="playersText">You</span>
-                <img id="player-img" src="Images/Lucky.png" >
-                <span id="playerChoiceText">Choose:</span>
-                <select name="" id="selector">
-                    <option value="Rock">Rock</option>
-                    <option value="Paper">Paper</option>
-                    <option value="Scissors">Scissors</option>
-                </select>
-                <button id="button1" onclick="choice()">Select</button>
-                <button id="button2">Play</button>
-            </div>
+      <div class="player">
+        <span class="playersText">You</span>
+        <img id="player-img" src="Images/Lucky.png" />
+        <span id="playerChoiceText">Choose:</span>
+        <select onchange="choice()" name="" id="selector">
+          <option disabled selected value="">Select</option>
+          <option value="Rock">Rock</option>
+          <option value="Paper">Paper</option>
+          <option value="Scissors">Scissors</option>
+        </select>
+        <button id="buttonPlay">Play</button>
+      </div>
 
-            <div id="x">
-            <img class="vs" src="Images/VS.png" >
-            </div>
-            
-            <div class="bot">
-                <span class="playersText">Bot</span>
-                <img id="bot-img" src="Images/Lucky.png" >
-                <span id="botChoiceText">(??????)</span>              
-            </div>
-            
+      <div id="x">
+        <img class="vs" src="Images/VS.png" />
+      </div>
+
+      <div class="bot">
+        <span class="playersText">Bot</span>
+        <img id="bot-img" src="Images/Lucky.png" />
+        <span id="botChoiceText">(??????)</span>
+      </div>
     </div>
 
     <div id="gameover">
-       <span id="result"></span>
-       <button id="button3" id="again">Play Again</button>
+      <span id="result"></span>
+      <button id="buttonGameOver">Play Again</button>
     </div>
 
     <audio id="buttonSound" src="Audios/click.mp3"></audio>
 
     <audio id="winAudio">
-        <source src="Audios/win.wav" type="audio/wav">
-        <source src="Audios/win.ogg" type="audio/ogg">
-        <source src="Audios/win.mp3" type="audio/mp3">
+      <source src="Audios/win.wav" type="audio/wav" />
+      <source src="Audios/win.ogg" type="audio/ogg" />
+      <source src="Audios/win.mp3" type="audio/mp3" />
     </audio>
 
     <audio id="drawAudio">
-        <source src="Audios/draw.wav" type="audio/wav">
-        <source src="Audios/draw.ogg" type="audio/ogg">
-        <source src="Audios/draw.mp3" type="audio/mp3">
+      <source src="Audios/draw.wav" type="audio/wav" />
+      <source src="Audios/draw.ogg" type="audio/ogg" />
+      <source src="Audios/draw.mp3" type="audio/mp3" />
     </audio>
 
     <audio id="loseAudio">
-        <source src="Audios/lose.wav" type="audio/wav">
-        <source src="Audios/lose.ogg" type="audio/ogg">
-        <source src="Audios/lose.mp3" type="audio/mp3">
+      <source src="Audios/lose.wav" type="audio/wav" />
+      <source src="Audios/lose.ogg" type="audio/ogg" />
+      <source src="Audios/lose.mp3" type="audio/mp3" />
     </audio>
 
     <script defer src="script.js"></script>
-</body>
+  </body>
 </html>
